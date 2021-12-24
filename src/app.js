@@ -51,7 +51,6 @@ app.get('/weather', (req, res) => {
         if (error) {
             return res.send({ error })
         }
-
         forecast(latitude, longitude, (error, { temperature, percepetation } = {}) => {
             if (error)
                 return res.send({ error })
@@ -66,12 +65,6 @@ app.get('/weather', (req, res) => {
         })
 
     })
-
-
-
-    // res.send({
-    //     city: req.query.address
-    // })
 })
 
 app.get('/products', (req, res) => {
@@ -81,8 +74,6 @@ app.get('/products', (req, res) => {
             error: 'you must provide the search key'
         })
     }
-
-
     console.log(req.query)
     res.send({
         products: []
